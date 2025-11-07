@@ -1,4 +1,4 @@
-// const cards = document.querySelectorAll('.card');
+
 let userName =document.getElementById('username');
 const startBtn = document.getElementById('startButton');
 const restartBtn = document.getElementById('restartButton');

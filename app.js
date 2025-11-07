@@ -46,6 +46,7 @@ const createElement = function(value){
    const img = document.createElement('img');
    img.src = 'images/game.png';
 
+   
    container.classList.add('card-container');
    card.classList.add('card');
    front.classList.add('card-front');
@@ -71,10 +72,12 @@ startBtn.addEventListener('click', () => {
   // Stop flipping after 3s, start updateTimer interval
   setTimeout(() => {
     clearInterval(timer);
-    clearInterval(interval); 
+    clearInterval(interval); // stop old timer if any
     interval = setInterval(updateTimer, 1000);
   }, 4000);
 });
+
+
 };
 
 function shuffleCards(){
@@ -89,10 +92,12 @@ function shuffleCards(){
          
          createElement(fil[cardId]);
       }
+
       if(cardArray.length == 16) return cardArray;
    }
 }
 
+console.log(shuffleCards());
 let clickCount = 0;
 var cardValue = [];
 let indexHolder = [];
@@ -171,6 +176,7 @@ back.forEach( (data, index) => {
          }
       }
 
+
       const allCorrect = [...back].every(el => el.classList.contains('yes'))
       if(allCorrect){
          console.log('correct');
@@ -218,8 +224,9 @@ function addScore(name, score) {
   leaderboard = leaderboard.slice(0, 5);
   localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
 
-  showLeaderboard(); 
+  showLeaderboard(); // always update display
 }
+
 
 function showLeaderboard() {
   const list = document.querySelector('#leaderboard');

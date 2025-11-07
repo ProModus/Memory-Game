@@ -1,4 +1,3 @@
-// const cards = document.querySelectorAll('.card');
 let userName =document.getElementById('username');
 const startBtn = document.getElementById('startButton');
 const restartBtn = document.getElementById('restartButton');
@@ -26,10 +25,6 @@ const timerDisplay = document.getElementById("timer");
     let finalTime;
     if (bestTime) highscoreDisplay.textContent = bestTime;
 
-   //    clearInterval(interval); 
-   //   interval = setInterval(updateTimer, 1000);
-   //  } function time(){
-    
       let seconds = 0;
       let interval;
     function updateTimer() {
@@ -84,9 +79,6 @@ startBtn.addEventListener('click', () => {
 
 
 };
-
-
-
 
 function shuffleCards(){
    var cardArray = [];
